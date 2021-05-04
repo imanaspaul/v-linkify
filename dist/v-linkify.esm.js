@@ -2330,7 +2330,7 @@ var Email = createTokenClass('email', {
 	@extends MultiToken
 */
 
-var Text$1 = createTokenClass('text');
+var Text = createTokenClass('text');
 /**
 	Multi-linebreak token - represents a line break
 	@class Nl
@@ -2402,7 +2402,7 @@ var multi = /*#__PURE__*/Object.freeze({
 	createTokenClass: createTokenClass,
 	MailtoEmail: MailtoEmail,
 	Email: Email,
-	Text: Text$1,
+	Text: Text,
 	Nl: Nl,
 	Url: Url
 });
@@ -2700,7 +2700,7 @@ function run(start, input, tokens) {
       // Accepting state!
       // First close off the textTokens (if available)
       if (textTokens.length > 0) {
-        multis.push(parserCreateMultiToken(Text$1, input, textTokens));
+        multis.push(parserCreateMultiToken(Text, input, textTokens));
         textTokens = [];
       } // Roll back to the latest accepting state
 
@@ -2716,7 +2716,7 @@ function run(start, input, tokens) {
 
 
   if (textTokens.length > 0) {
-    multis.push(parserCreateMultiToken(Text$1, input, textTokens));
+    multis.push(parserCreateMultiToken(Text, input, textTokens));
   }
 
   return multis;
@@ -4278,7 +4278,7 @@ var script = /*#__PURE__*/{
   // vue component name
   props: {
     html: {
-      type: Text,
+      type: String,
       required: true,
       default: `Your text will goes here..`
     }
