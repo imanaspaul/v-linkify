@@ -11,7 +11,7 @@ export default /*#__PURE__*/{
   name: 'VLinkify', // vue component name
   props: {
     html: {
-      type: Text,
+      type: String,
       required: true,
       default: `Your text will goes here..`
     }
