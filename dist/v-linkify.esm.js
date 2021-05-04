@@ -4281,6 +4281,10 @@ var script = /*#__PURE__*/{
       type: String,
       required: true,
       default: `Your text will goes here..`
+    },
+    classname: {
+      type: String,
+      required: false
     }
   },
   computed: {
@@ -4293,7 +4297,7 @@ var script = /*#__PURE__*/{
     // convert to linkify
     convertToLink(data) {
       const markup = data.replace(/</g, '&lt;').replace(/((?:href|src)=['"])(.*?)(['"])/g, (matched, prefix, href, suffix) => {
-        return `${prefix}<a href="${href}" target="_blank">${href}</a>${suffix}`;
+        return `${prefix}<a href="${href}" class=${this.classname} target="_blank">${href}</a>${suffix}`;
       });
       return html(markup, {
         target: {

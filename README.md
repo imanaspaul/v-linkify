@@ -1,9 +1,14 @@
-# To install it
-
+# Installation
 ```js
 npm i vue-linkify-v2
 ```
-
+# Install globally
+```
+import Vue from 'vue';
+import vLinkify from 'vue-linkify-v2'; 
+ 
+Vue.use(vLinkify)
+```
 # Use it in your component
 
 ```js
@@ -14,3 +19,9 @@ export default {
   },
 }
 ```
+```
+<v-linkify :html="your-data"/>
+```
+
+# Props
+* html (type : String, required: true)

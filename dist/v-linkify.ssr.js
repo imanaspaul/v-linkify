@@ -4332,6 +4332,10 @@ var script = /*#__PURE__*/{
       type: String,
       required: true,
       default: "Your text will goes here.."
+    },
+    classname: {
+      type: String,
+      required: false
     }
   },
   computed: {
@@ -4342,8 +4346,10 @@ var script = /*#__PURE__*/{
   methods: {
     // convert to linkify
     convertToLink: function convertToLink(data) {
+      var _this = this;
+
       var markup = data.replace(/</g, '&lt;').replace(/((?:href|src)=['"])(.*?)(['"])/g, function (matched, prefix, href, suffix) {
-        return "".concat(prefix, "<a href=\"").concat(href, "\" target=\"_blank\">").concat(href, "</a>").concat(suffix);
+        return "".concat(prefix, "<a href=\"").concat(href, "\" class=").concat(_this.classname, " target=\"_blank\">").concat(href, "</a>").concat(suffix);
       });
       return html(markup, {
         target: {
@@ -4448,7 +4454,7 @@ var __vue_inject_styles__ = undefined;
 var __vue_scope_id__ = undefined;
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-69cefe75";
+var __vue_module_identifier__ = "data-v-46cb39eb";
 /* functional template */
 
 var __vue_is_functional_template__ = false;

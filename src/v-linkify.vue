@@ -14,6 +14,10 @@ export default /*#__PURE__*/{
       type: String,
       required: true,
       default: `Your text will goes here..`
+    },
+    classname: {
+      type: String,
+      required: false,
     }
   },
   computed: {
@@ -27,7 +31,7 @@ export default /*#__PURE__*/{
       const markup = data
         .replace(/</g, '&lt;')
         .replace(/((?:href|src)=['"])(.*?)(['"])/g, (matched, prefix, href, suffix) => {
-          return `${prefix}<a href="${href}" target="_blank">${href}</a>${suffix}`
+          return `${prefix}<a href="${href}" class=${this.classname} target="_blank">${href}</a>${suffix}`
         })
 
       return linkifyHtml(markup, { target: { url: "_blank" } })
