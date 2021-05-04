@@ -31,7 +31,7 @@ export default /*#__PURE__*/{
       const markup = data
         .replace(/</g, '&lt;')
         .replace(/((?:href|src)=['"])(.*?)(['"])/g, (matched, prefix, href, suffix) => {
-          return `${prefix}<a href="${href}" class=${this.classname} target="_blank">${href}</a>${suffix}`
+          return `${prefix}<a href="${href}" class=linkifyLink" target="_blank">${href}</a>${suffix}`
         })
 
       return linkifyHtml(markup, { target: { url: "_blank" } })
