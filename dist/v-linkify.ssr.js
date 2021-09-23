@@ -4339,17 +4339,15 @@ var script = /*#__PURE__*/{
     }
   },
   computed: {
-    foramttedText: function foramttedText() {
+    formattedText: function formattedText() {
       return this.convertToLink(this.html);
     }
   },
   methods: {
     // convert to linkify
     convertToLink: function convertToLink(data) {
-      var _this = this;
-
       var markup = data.replace(/</g, '&lt;').replace(/((?:href|src)=['"])(.*?)(['"])/g, function (matched, prefix, href, suffix) {
-        return "".concat(prefix, "<a href=\"").concat(href, "\" class=").concat(_this.classname, " target=\"_blank\">").concat(href, "</a>").concat(suffix);
+        return "".concat(prefix, "<a href=\"").concat(href, "\" class=linkifyLink\" target=\"_blank\">").concat(href, "</a>").concat(suffix);
       });
       return html(markup, {
         target: {
@@ -4442,7 +4440,7 @@ var __vue_render__ = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('div', [_vm._ssrNode("<div>" + _vm._s(_vm.foramttedText) + "</div>")]);
+  return _c('div', [_vm._ssrNode("<div>" + _vm._s(_vm.formattedText) + "</div>")]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -4454,7 +4452,7 @@ var __vue_inject_styles__ = undefined;
 var __vue_scope_id__ = undefined;
 /* module identifier */
 
-var __vue_module_identifier__ = "data-v-46cb39eb";
+var __vue_module_identifier__ = "data-v-e0a3f848";
 /* functional template */
 
 var __vue_is_functional_template__ = false;
