@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-html="foramttedText"></div>
+    <div v-html="formattedText"></div>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default /*#__PURE__*/{
     }
   },
   computed: {
-    foramttedText() {
+    formattedText() {
       return this.convertToLink(this.html)
     }
   },

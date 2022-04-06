@@ -4288,7 +4288,7 @@ var script = /*#__PURE__*/{
     }
   },
   computed: {
-    foramttedText() {
+    formattedText() {
       return this.convertToLink(this.html);
     }
 
@@ -4297,7 +4297,7 @@ var script = /*#__PURE__*/{
     // convert to linkify
     convertToLink(data) {
       const markup = data.replace(/</g, '&lt;').replace(/((?:href|src)=['"])(.*?)(['"])/g, (matched, prefix, href, suffix) => {
-        return `${prefix}<a href="${href}" class=${this.classname} target="_blank">${href}</a>${suffix}`;
+        return `${prefix}<a href="${href}" class=linkifyLink" target="_blank">${href}</a>${suffix}`;
       });
       return html(markup, {
         target: {
@@ -4397,7 +4397,7 @@ var __vue_render__ = function () {
 
   return _c('div', [_c('div', {
     domProps: {
-      "innerHTML": _vm._s(_vm.foramttedText)
+      "innerHTML": _vm._s(_vm.formattedText)
     }
   })]);
 };
